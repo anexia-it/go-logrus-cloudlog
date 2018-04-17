@@ -12,7 +12,7 @@ Please also see the [cloudlog client README](https://github.com/anexia-it/go-clo
 ```go
 package main
 
-import "ithub.com/anexia-it/go-logrus-cloudlog"
+import "github.com/anexia-it/go-logrus-cloudlog"
 
 func main() {
 
