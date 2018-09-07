@@ -21,6 +21,14 @@ type Hook struct {
 }
 
 var converterFunc = func(entry *logrus.Entry) interface{} {
+	if entry.Data["error"] != nil {
+		errorField, ok := entry.Data["error"].(error)
+		if ok {
+			entry.Data["error"] = errorField.Error()
+		}
+	}
+
+
 	d := document{
 		Fields:  entry.Data,
 		Message: entry.Message,
